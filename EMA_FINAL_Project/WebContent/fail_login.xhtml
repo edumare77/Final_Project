@@ -1,0 +1,40 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+     <ui:define name="content">
+
+ 
+    	<h1><h:outputText value="#{msg.gp_booking_system}" /></h1>
+    	
+    	<h2><h:outputText value="#{msg.fail_login}" /></h2>
+    	
+    		 
+            <p:growl id="growl" life="3000" />
+            <h:form>            
+   
+                 
+ 
+                 
+                     <h:panelGrid columns="2" cellpadding="5">
+                     
+                         <h:outputLabel value="Username:" />
+                         <p:inputText id="username" value="#{authBean.loggedUser.userName}" required="true" label="userName" />
+                         
+                         <h:outputLabel value="Password:" />
+                         <p:password id="password" value="#{authBean.loggedUser.password}" required="true" label="password" />
+                         
+                         <f:facet name="footer">
+                                <p:commandButton action="#{authBean.login()}" value="Login" type="submit" />
+                         </f:facet>
+                         
+                   </h:panelGrid>
+              
+          </h:form>
+	    	
+    	
+     </ui:define>
+</ui:composition>

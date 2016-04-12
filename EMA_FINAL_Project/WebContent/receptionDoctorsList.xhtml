@@ -1,0 +1,77 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+     <ui:define name="content">
+ 
+    	<h2><h:outputText value="#{msg.doctors_list_title}" /></h2>
+    	
+    		<p:growl id="growl" life="2000" /> 
+ 		
+	 		<p:dataTable id="docNoTable" value="#{receptionBean.docNoList}"
+			var="d" styleClass="order-table" headerClass="order-table-header"
+			rowClasses="order-table-odd-row,order-table-even-row"
+			scrollable="true" scrollHeight="400">
+
+			<p:column headerText="Doctor ID">
+				<h:outputText value="#{d.medId}" />
+			</p:column>
+			
+			<p:column headerText="NHS_No">
+				<h:outputText value="#{d.nhsNo}" />
+			</p:column>
+
+			<p:column headerText="Name">
+				<h:outputText value="#{d.name}" />
+			</p:column>
+
+			<p:column headerText="Surname">
+				<h:outputText value="#{d.surname}" />
+			</p:column>			
+
+			<p:column headerText="Telephone">
+				<h:outputText value="#{d.telephone}" />
+			</p:column>
+			
+			<p:column headerText="Mobile Phone">
+				<h:outputText value="#{d.mobilephone}" />
+			</p:column>
+			
+			<p:column headerText="Room">
+				<h:outputText value="#{d.room}" />
+			</p:column>
+
+			<p:column headerText="Actions">
+				<h:form>
+					<p:commandButton action="#{receptionBean.deleteMedStaff(d)}"
+						id="iconOnly" update="growl, docNoTable" icon="ui-icon-trash"
+						title="Icon Only" >						
+						<p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />						
+					</p:commandButton>
+					
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="Yes" type="button"
+							styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+						<p:commandButton value="No" type="button"
+							styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+					</p:confirmDialog>
+					
+					<p:button outcome="/reception/medStaffDetail" icon="ui-icon-search" title="Detail">
+							    <f:param name="medId" value="#{d.medId}" />
+							</p:button>
+					
+					<p:button outcome="/reception/medStaffModify" icon="ui-icon-pencil" title="Edit">
+							    <f:param name="medId" value="#{d.medId}" />
+					</p:button>
+					
+				</h:form>
+			</p:column>
+
+		</p:dataTable>
+	    	
+    	
+     </ui:define>
+</ui:composition>

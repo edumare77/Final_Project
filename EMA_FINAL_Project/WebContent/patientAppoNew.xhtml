@@ -1,0 +1,92 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+		<h2>
+			<h:outputText value="#{msg.new_appo_title}" />
+		</h2>
+
+		<p:growl id="growl" life="3000" />
+
+		<h:form id="newAppoData">
+
+			
+			<h3>
+				<h:outputText value="#{msg.select_appo_medClass}:" />
+			</h3>
+			<h:panelGrid columns="3">
+				<p:outputLabel for="medClass" value="Medical staff class: " />
+				<p:selectOneMenu id="medClass" value="#{patientBean.selectedMedClass}" required="true"
+					label="Medical staff class">
+					<f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
+					<f:selectItem itemLabel="Doctor" itemValue="doc" />
+					<f:selectItem itemLabel="Nurse" itemValue="nur" />
+					<p:ajax event="change" update="calendarPanel, timesPanel" listener="#{patientBean.onMedClassSelect}" />
+				</p:selectOneMenu>
+				<p:message for="medClass" />
+			</h:panelGrid>
+
+
+			<h3>
+				<h:outputText value="#{msg.select_appo_day}:" />
+			</h3>
+
+			<p:panel id="calendarPanel" style="margin-bottom:10px">
+				<p:outputLabel for="event" value="Select Med Staff first... "
+					rendered="#{patientBean.selectedMedClass == null}" />
+				<p:calendar id="event" value="#{patientBean.selectedDate}"
+					rendered="#{patientBean.selectedMedClass != null}" showOn="button">
+					<p:ajax event="dateSelect" listener="#{patientBean.onDateSelect}" update="growl, timesPanel" />
+
+				</p:calendar>
+			</p:panel>
+
+
+
+			<h3>
+				<h:outputText value="#{msg.select_appo_time}" />
+			</h3>
+
+			<p:panel id="timesPanel" style="margin-bottom:10px">
+
+
+				<h:outputText value="Select a date to show avaliable times..."
+					rendered="#{patientBean.selectedDate == null}" />
+
+				<h:outputText value="No times availables for selected date..."
+					rendered="#{patientBean.selectedDate != null and empty patientBean.avaliableTimesList}" />
+
+				<p:selectOneRadio rendered="#{not empty patientBean.avaliableTimesList}"
+					value="#{patientBean.selectedDateId}" layout="grid" columns="8">
+
+
+					<f:selectItems value="#{patientBean.avaliableTimesList}" var="at" itemLabel="#{at.appoTime}"
+						itemValue="#{at.dateId}" />
+
+				</p:selectOneRadio>
+
+			</p:panel>
+
+
+			<h3>
+				<h:outputText value="#{msg.select_appo_reason}" />
+			</h3>
+
+			<h:panelGrid columns="3">
+				<h:outputLabel for="reason" value="Reason: * " />
+				<p:inputTextarea id="reason" maxlength="65535" value="#{patientBean.selectedDateReason}" required="true"
+					label="Reason" />
+				<p:message for="reason" />
+			</h:panelGrid>
+			
+			
+			<p:commandButton value="Save" update="growl, newAppoData" action="#{patientBean.saveAppo}"
+				icon="ui-icon-check" style="margin-right:10px" />
+
+
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>

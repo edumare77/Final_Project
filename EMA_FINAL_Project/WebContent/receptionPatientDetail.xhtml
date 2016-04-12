@@ -1,0 +1,58 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+		<h2>
+			<h:outputText value="#{msg.detail_user_form}" />
+		</h2>
+
+		<p:growl id="growl" life="3000" />
+		
+		<h:form>
+			
+				<!-- <p:messages autoUpdate="true" />-->
+
+				<h:panelGrid id="patientData" columns="2" cellpadding="5">
+
+					<h:outputLabel for="nhsNo" value="NHS number: *" />
+					<h:outputLabel id="nhsNo" value="#{receptionBean.detailPatient.nhsNo}" />
+
+				
+					<h:outputLabel for="name" value="Name: *" />
+					<h:outputLabel id="name" value="#{receptionBean.detailPatient.name}"/>
+
+					<h:outputLabel for="surname" value="Surname: *" />
+					<h:outputLabel id="surname" value="#{receptionBean.detailPatient.surname}"/>
+
+					<h:outputLabel for="address" value="Address: *" />
+					<h:outputLabel id="address" value="#{receptionBean.detailPatient.address}"/>
+
+					<h:outputLabel for="telephone" value="Telephone: *" />
+					<h:outputLabel id="telephone" value="#{receptionBean.detailPatient.telephone}"/>
+
+					<h:outputLabel for="mobilephone" value="Mobilephone: *" />
+					<h:outputLabel id="mobilephone"
+						value="#{receptionBean.detailPatient.mobilephone}"/>
+
+					
+					<h:outputLabel for="gender" value="Gender: *" />
+					<h:outputLabel id="gender" value="#{receptionBean.detailPatient.gender}"/>
+					
+
+					<h:outputLabel for="ethnicity" value="Ethnicity: " />
+					<h:outputLabel id="ethnicity" value="#{receptionBean.detailPatient.ethnicity}"/>
+
+
+					<h:outputLabel for="dob" value="Date of birth: *" />
+					<h:outputLabel id="dob" value="#{receptionBean.detailPatient.dobText}"/>
+					
+				</h:panelGrid>
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>

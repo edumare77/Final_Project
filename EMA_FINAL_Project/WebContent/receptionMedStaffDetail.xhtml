@@ -1,0 +1,70 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+		<h2>
+			<h:outputText value="#{msg.med_staff_datails}" />
+		</h2>
+
+		<p:growl id="growl" life="3000" />
+		
+		<h:form>
+			
+				<!-- <p:messages autoUpdate="true" />-->
+
+				<h:panelGrid id="medStaffData" columns="2" cellpadding="5">
+
+					<h:outputLabel for="nhsNo" value="NHS number: *" />
+					<h:outputLabel id="nhsNo" value="#{receptionBean.detailMedStaff.nhsNo}" />
+					
+					<h:outputLabel for="name" value="Name: *" />
+					<h:outputLabel id="name" value="#{receptionBean.detailMedStaff.name}"/>
+
+					<h:outputLabel for="surname" value="Surname: *" />
+					<h:outputLabel id="surname" value="#{receptionBean.detailMedStaff.surname}"/>
+
+					<h:outputLabel for="address" value="Address: *" />
+					<h:outputLabel id="address" value="#{receptionBean.detailMedStaff.address}"/>
+
+					<h:outputLabel for="telephone" value="Telephone: *" />
+					<h:outputLabel id="telephone" value="#{receptionBean.detailMedStaff.telephone}"/>
+
+					<h:outputLabel for="mobilephone" value="Mobilephone: *" />
+					<h:outputLabel id="mobilephone"
+						value="#{receptionBean.detailMedStaff.mobilephone}"/>
+
+					
+					<h:outputLabel for="gender" value="Gender: *" />
+					<h:outputLabel id="gender" value="#{receptionBean.detailMedStaff.gender}"/>
+					
+
+					<h:outputLabel for="ethnicity" value="Ethnicity: " />
+					<h:outputLabel id="ethnicity" value="#{receptionBean.detailMedStaff.ethnicity}"/>
+
+
+					<h:outputLabel for="dob" value="Date of birth: *" />
+					<h:outputLabel id="dob" value="#{receptionBean.detailMedStaff.dobText}"/>
+					
+					<h:outputLabel for="medId" value="Medical staff Id: *" />
+					<h:outputLabel id="medId" value="#{receptionBean.detailMedStaff.medId}"/>
+						
+
+					<h:outputLabel for="room" value="Room: *" />
+					<h:outputLabel id="room" value="#{receptionBean.detailMedStaff.room}"/>
+					
+
+					<h:outputLabel for="medClass" value="Class: " />
+					<h:outputLabel id="medClass" value="#{receptionBean.detailMedStaff.medClass}"/>
+
+
+					
+				</h:panelGrid>
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>

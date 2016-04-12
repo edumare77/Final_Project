@@ -1,0 +1,52 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+     <ui:define name="content">   	
+    	
+    		<p:growl id="growl" life="2000" /> 
+    		
+    		<h2><h:outputText value="#{msg.past_medical_appointents}" /></h2>
+ 		
+	 		<p:dataTable id="pastApps" value="#{patientBean.pastAppsList}" var="past"
+	    			styleClass="order-table"
+	    			headerClass="order-table-header"
+	    			rowClasses="order-table-odd-row,order-table-even-row"
+	    			scrollable="true" scrollHeight="400">    		
+	 
+		 		
+		    		<p:column headerText="Doctor Name">
+		    			<h:outputText value="#{past.medStaff.name}"/>
+		    		</p:column>
+		    		
+		    		<p:column headerText="Doctor Surname">
+		    			<h:outputText value="#{past.medStaff.surname}"/>
+		    		</p:column>
+		 
+		 			<p:column headerText="Appointment Date">
+		    			<h:outputText value="#{past.date.appoDate} #{past.date.appoTime}"/>
+		    		</p:column>
+		    		
+		    		<p:column headerText="Reason">
+		    			<h:outputText value="#{past.reason}"/>
+		    		</p:column>
+		    		
+		    		
+		    		<p:column headerText="Actions">
+		    			<h:form>
+		    				<p:button outcome="/patient/appoDetail" icon="ui-icon-search" title="Detail">
+							    <f:param name="dateId" value="#{past.date.dateId}" />
+							    <f:param name="medId" value="#{past.medStaff.medId}" />	
+							</p:button>
+		    				
+						</h:form>    					    			
+		    		</p:column>
+	    	</p:dataTable>
+	    	
+	    	
+	    	
+     </ui:define>
+</ui:composition>

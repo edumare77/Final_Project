@@ -1,0 +1,83 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+		<h2>
+			<h:outputText value="#{msg.detail_appo_form}" />
+		</h2>
+
+		<p:growl id="growl" life="3000" />
+
+		<h:form>
+
+			<h3>
+				<h:outputText value="#{msg.detail_appo_info}" />
+			</h3>
+
+			<h:panelGrid id="appoInfoDetail" columns="2" cellpadding="5">
+
+				<h:outputLabel for="date" value="Appointment Date: " />
+				<h:outputLabel id="date" value="#{patientBean.appoDetail.date.appoDate}" />
+
+
+				<h:outputLabel for="time" value="Appointment Time: " />
+				<h:outputLabel id="time" value="#{patientBean.appoDetail.date.appoTime}" />
+
+				<h:outputLabel for="room" value="Room: " />
+				<h:outputLabel id="room" value="#{patientBean.appoDetail.medStaff.room}" />
+
+				<h:outputLabel for="reason" value="Reason: " />
+				<h:outputLabel id="reason" value="#{patientBean.appoDetail.reason}" />
+
+				
+			</h:panelGrid>
+
+
+			<h3>
+				<h:outputText value="#{msg.detail_appo_doctor_info}" />
+			</h3>
+
+			<h:panelGrid id="appoMedStaffDetail" columns="2" cellpadding="5">
+
+				<h:outputLabel for="medId" value="Id: " />
+				<h:outputLabel id="medId" value="#{patientBean.appoDetail.medStaff.medId}" />
+
+
+				<h:outputLabel for="name" value="Name: " />
+				<h:outputLabel id="name" value="#{patientBean.appoDetail.medStaff.name}" />
+
+				<h:outputLabel for="surname" value="Surname: " />
+				<h:outputLabel id="surname" value="#{patientBean.appoDetail.medStaff.surname}" />
+
+				<h:outputLabel for="telephone" value="Telephone: " />
+				<h:outputLabel id="telephone" value="#{patientBean.appoDetail.medStaff.telephone}" />
+
+				<h:outputLabel for="mobilephone" value="Mobilephone: " />
+				<h:outputLabel id="mobilephone" value="#{patientBean.appoDetail.medStaff.mobilephone}" />
+
+
+
+
+			</h:panelGrid>
+			
+			
+			<h3>
+				<h:outputText value="#{msg.detail_appo_diag_info}" />
+			</h3>
+
+			<h:panelGrid id="appoDiagDetail" columns="2" cellpadding="5">
+
+				<h:outputLabel for="diag" value="Diagnostic: " />
+				<h:outputLabel id="diag" value="#{patientBean.appoDetail.diag}" />
+
+
+				<h:outputLabel for="presc" value="Prescription: " />
+				<h:outputLabel id="presc" value="#{patientBean.appoDetail.presc}" />
+				
+			</h:panelGrid>
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,87 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+		<h2>
+			<h:outputText value="#{msg.modify_user_form}" />
+		</h2>
+
+		<p:growl id="growl" life="3000" />
+		
+		<h:form>
+			
+				<!-- <p:messages autoUpdate="true" />-->
+				<h:inputHidden value="#{receptionBean.modifyPatient.nhsNo}"></h:inputHidden>
+
+				<h:panelGrid id="patientData" columns="3" cellpadding="5">
+
+					<h:outputLabel for="nhs_no" value="NHS number: *" />
+					<p:inputText id="nhs_no" value="#{receptionBean.modifyPatient.nhsNo}" readonly="true" />							
+					<p:message for="nhs_no" />
+
+				
+					<h:outputLabel for="name" value="Name: *" />
+					<p:inputText id="name" value="#{receptionBean.modifyPatient.name}"
+						required="true" label="Name" />
+					<p:message for="name" />
+
+					<h:outputLabel for="surname" value="Surname: *" />
+					<p:inputText id="surname" value="#{receptionBean.modifyPatient.surname}"
+						required="true" label="Surname" />
+					<p:message for="surname" />
+
+					<h:outputLabel for="address" value="Address: *" />
+					<p:inputText id="address" value="#{receptionBean.modifyPatient.address}"
+						required="true" label="Address" />
+					<p:message for="address" />
+
+					<h:outputLabel for="telephone" value="Telephone: *" />
+					<p:inputText id="telephone" value="#{receptionBean.modifyPatient.telephone}"
+						required="true" label="Telephone" />
+					<p:message for="telephone" />
+
+					<h:outputLabel for="mobilephone" value="Mobilephone: *" />
+					<p:inputText id="mobilephone"
+						value="#{receptionBean.modifyPatient.mobilephone}" required="true"
+						label="Mobilephone" />
+					<p:message for="mobilephone" />
+
+					
+					<h:outputLabel for="gender" value="Gender: *" />
+					<p:selectOneMenu id="gender" value="#{receptionBean.modifyPatient.gender}"
+						required="true" label="Gender">
+						<f:selectItem itemLabel="Male" itemValue="male" />
+						<f:selectItem itemLabel="Female" itemValue="female" />
+					</p:selectOneMenu>					
+					<p:message for="gender" />
+					
+
+					<h:outputLabel for="ethnicity" value="Ethnicity: " />
+					<p:inputText id="ethnicity" value="#{receptionBean.modifyPatient.ethnicity}" label="Ethnicity" />
+					<p:message for="ethnicity" />
+
+
+					<h:outputLabel for="dob" value="Date of birth: *" />
+					<p:inputMask id="dob" value="#{receptionBean.modifyPatient.dobText}"
+						mask="99/99/9999" required="true" label="Date of birth" />
+
+					<p:message for="dob" />
+					
+					</h:panelGrid>					
+					
+				
+
+				<p:commandButton value="Save" action="#{receptionBean.updatePatient()}" update="growl, patientData" 
+						icon="ui-icon-check" style="margin-right:10px" />
+
+			
+
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>
