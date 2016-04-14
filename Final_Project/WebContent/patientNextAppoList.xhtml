@@ -1,0 +1,59 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+     <ui:define name="content">   	
+    	
+    		<p:growl id="growl" life="2000" /> 
+	    	
+	    	<h2><h:outputText value="#{msg.next_medical_appointents}" /></h2>
+ 		
+	 		<p:dataTable id="nextApps" value="#{patientBean.nextAppsList}" var="next"
+	    			styleClass="order-table"
+	    			headerClass="order-table-header"
+	    			rowClasses="order-table-odd-row,order-table-even-row"
+	    			scrollable="true" scrollHeight="150">    		
+	 
+		 		
+		    		<p:column headerText="Doctor Name">
+		    			<h:outputText value="#{next.medStaff.name}"/>
+		    		</p:column>
+		    		
+		    		<p:column headerText="Doctor Surname">
+		    			<h:outputText value="#{next.medStaff.surname}"/>
+		    		</p:column>
+		 
+		 			<p:column headerText="Appointment Date">
+		    			<h:outputText value="#{next.date.appoDate} #{next.date.appoTime}"/>
+		    		</p:column>
+		    		
+		    		<p:column headerText="Reason">
+		    			<h:outputText value="#{next.reason}"/>
+		    		</p:column>
+		    		
+		    		
+		    		<p:column headerText="Actions">
+		    			<h:form>
+		    				<p:button outcome="/patient/appoDetail" icon="ui-icon-search" title="Detail">
+							    <f:param name="dateId" value="#{next.date.dateId}" />
+							    <f:param name="medId" value="#{next.medStaff.medId}" />	
+							</p:button>
+							<p:commandButton action="#{patientBean.deleteAppo(next)}" id="iconOnly"	update="growl, nextApps" icon="ui-icon-trash" title="Cancel">
+								<p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+							</p:commandButton>
+		
+							<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+								<p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes"
+									icon="ui-icon-check" />
+								<p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no"
+									icon="ui-icon-close" />
+							</p:confirmDialog>
+						</h:form>   					    			
+		    		</p:column>
+	    	</p:dataTable>	
+    	
+     </ui:define>
+</ui:composition>

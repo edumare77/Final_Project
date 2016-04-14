@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14410107722310" configfile="/Final_Project/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" comment="Login Page" x="122" y="583" id="pf14410435608161" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14411920872583 pf14414680977600 pf14414680977601 pf14414680977602" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success.xhtml" comment="Register" x="122" y="1489" id="pf14410435608174" referenceLink="//@navigationRule.4/@fromViewId|" path="/success.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="fail.xhtml" comment="ReLoging Page" x="338" y="381" id="pf14410435608189" referenceLink="//@navigationRule.4/@navigationCase.3/@toViewId|" outlinks="pf14411923024664 pf14414680977613 pf14414680977624 pf14414680977625" inlinks="pf14411920872583 pf14411923024664" path="/fail_login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="122" y="2396" id="pf144104356081811" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="/register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cancelCust.xhtml" x="122" y="3304" id="pf144104356081812" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" path="/cancelCust.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updateCust.xhtml" x="122" y="4213" id="pf144104356081813" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" path="/updateCust.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success_med_staff.xhtml" x="122" y="5123" id="pf14412774159007" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" path="/success_med_staff.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success_patient.xhtml" x="122" y="6034" id="pf14412774159008" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" path="/success_patient.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success_reception.xhtml" x="122" y="6946" id="pf14412774159009" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" path="/success_reception.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="338" y="3826" id="pf14414680977626" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14414680977637 pf14414680977638 pf14414680977639 pf144146809776310 pf144146809776311 pf144146809776312 pf144146809776313 pf144146809776314 pf144146829676027 pf144146829676028 pf14421471130250 pf14421471130251 pf14421471130252 pf14421471130253 pf14421471130254 pf14421471130255 pf14421471130256 pf14421471130257 pf14421471130258 pf14421471130259" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionHome.xhtml" x="554" y="178" id="pf144146809776317" referenceLink="//@navigationRule.4/@navigationCase.2/@toViewId|" inlinks="pf14414680977637 pf14414680977600 pf14414680977625" path="/receptionHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionPatientsList.xhtml" x="554" y="1330" id="pf144146809776318" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14414680977638" path="/receptionPatientsList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionPatientNew.xhtml" x="554" y="1714" id="pf144146809776319" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14414680977639" path="/receptionPatientNew.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionPatientDetail.xhtml" x="554" y="2098" id="pf144146809776320" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf144146809776310" path="/receptionPatientDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionPatientModify.xhtml" x="554" y="2482" id="pf144146809776321" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf144146809776311" path="/receptionPatientModify.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionDoctorsList.xhtml" x="554" y="2866" id="pf144146809776322" referenceLink="//@navigationRule.0/@navigationCase.5/@toViewId|" inlinks="pf144146809776312" path="/receptionDoctorsList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionNursesList.xhtml" x="554" y="3250" id="pf144146809776323" referenceLink="//@navigationRule.0/@navigationCase.6/@toViewId|" inlinks="pf144146809776313" path="/receptionNursesList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionMedStaffNew.xhtml" x="554" y="3634" id="pf144146809776324" referenceLink="//@navigationRule.0/@navigationCase.7/@toViewId|" inlinks="pf144146809776314" path="/receptionMedStaffNew.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="medStaffHome.xhtml" x="554" y="562" id="pf144146809776325" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14414680977601 pf14414680977613 pf14421471130255" path="/medStaffHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="patientHome.xhtml" x="554" y="946" id="pf144146809776326" referenceLink="//@navigationRule.4/@navigationCase.1/@toViewId|" inlinks="pf14414680977602 pf14414680977624 pf14421471130250" path="/patientHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionMedStaffDetail.xhtml" x="554" y="4018" id="pf144146829676029" referenceLink="//@navigationRule.0/@navigationCase.8/@toViewId|" inlinks="pf144146829676027" path="/receptionMedStaffDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="receptionMedStaffModify.xhtml" x="554" y="4402" id="pf144146829676030" referenceLink="//@navigationRule.0/@navigationCase.9/@toViewId|" inlinks="pf144146829676028" path="/receptionMedStaffModify.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="patientPastAppoList.xhtml" x="554" y="4786" id="pf144214711302610" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14421471130251" path="/patientPastAppoList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="patientNextAppoList.xhtml" x="554" y="5170" id="pf144214711302611" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf14421471130252" path="/patientNextAppoList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="patientAppoNew.xhtml" x="554" y="5554" id="pf144214711302612" referenceLink="//@navigationRule.1/@navigationCase.3/@toViewId|" inlinks="pf14421471130253" path="/patientAppoNew.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="patientAppoDetail.xhtml" x="554" y="5938" id="pf144214711302613" referenceLink="//@navigationRule.1/@navigationCase.4/@toViewId|" inlinks="pf14421471130254" path="/patientAppoDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="medStaffRegAppoList.xhtml" x="554" y="6322" id="pf144214711302614" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf14421471130256" path="/medStaffRegAppoList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="medStaffNextAppoList.xhtml" x="554" y="6706" id="pf144214711302615" referenceLink="//@navigationRule.2/@navigationCase.2/@toViewId|" inlinks="pf14421471130257" path="/medStaffNextAppoList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="medStaffAppoModify.xhtml" x="554" y="7090" id="pf144214711302716" referenceLink="//@navigationRule.2/@navigationCase.3/@toViewId|" inlinks="pf14421471130258" path="/medStaffAppoModify.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="medStaffAppoDetail.xhtml" x="554" y="7474" id="pf144214711302717" referenceLink="//@navigationRule.2/@navigationCase.4/@toViewId|" inlinks="pf14421471130259" path="/medStaffAppoDetail.xhtml"/>
+  <links id="pf14411920872583" target="pf14410435608189" source="pf14410435608161" outcome="invalid"/>
+  <links id="pf14414680977637" target="pf144146809776317" source="pf14414680977626" outcome="/reception/home"/>
+  <links id="pf14414680977638" target="pf144146809776318" source="pf14414680977626" outcome="/reception/patientsList"/>
+  <links id="pf14414680977639" target="pf144146809776319" source="pf14414680977626" outcome="/reception/patientNew"/>
+  <links id="pf144146809776310" target="pf144146809776320" source="pf14414680977626" outcome="/reception/patientDetail"/>
+  <links id="pf144146809776311" target="pf144146809776321" source="pf14414680977626" outcome="/reception/patientModify"/>
+  <links id="pf144146809776312" target="pf144146809776322" source="pf14414680977626" outcome="/reception/doctorsList"/>
+  <links id="pf144146809776313" target="pf144146809776323" source="pf14414680977626" outcome="/reception/nursesList"/>
+  <links id="pf144146809776314" target="pf144146809776324" source="pf14414680977626" outcome="/reception/medStaffNew"/>
+  <links id="pf14414680977600" target="pf144146809776317" source="pf14410435608161" outcome="reception"/>
+  <links id="pf14414680977601" target="pf144146809776325" source="pf14410435608161" outcome="med_staff"/>
+  <links id="pf14414680977602" target="pf144146809776326" source="pf14410435608161" outcome="patient"/>
+  <links id="pf14414680977613" target="pf144146809776325" source="pf14410435608189" outcome="med_staff"/>
+  <links id="pf14414680977624" target="pf144146809776326" source="pf14410435608189" outcome="patient"/>
+  <links id="pf14414680977625" target="pf144146809776317" source="pf14410435608189" outcome="reception"/>
+  <links id="pf144146829676027" target="pf144146829676029" source="pf14414680977626" outcome="/reception/medStaffDetail"/>
+  <links id="pf144146829676028" target="pf144146829676030" source="pf14414680977626" outcome="/reception/medStaffModify"/>
+  <links id="pf14421471130250" target="pf144146809776326" source="pf14414680977626" outcome="/patient/home"/>
+  <links id="pf14421471130251" target="pf144214711302610" source="pf14414680977626" outcome="/patient/pastAppoList"/>
+  <links id="pf14421471130252" target="pf144214711302611" source="pf14414680977626" outcome="/patient/nextAppoList"/>
+  <links id="pf14421471130253" target="pf144214711302612" source="pf14414680977626" outcome="/patient/appoNew"/>
+  <links id="pf14421471130254" target="pf144214711302613" source="pf14414680977626" outcome="/patient/appoDetail"/>
+  <links id="pf14421471130255" target="pf144146809776325" source="pf14414680977626" outcome="/med/home"/>
+  <links id="pf14421471130256" target="pf144214711302614" source="pf14414680977626" outcome="/med/regAppoList"/>
+  <links id="pf14421471130257" target="pf144214711302615" source="pf14414680977626" outcome="/med/nextAppoList"/>
+  <links id="pf14421471130258" target="pf144214711302716" source="pf14414680977626" outcome="/med/appoModify"/>
+  <links id="pf14421471130259" target="pf144214711302717" source="pf14414680977626" outcome="/med/appoDetail"/>
+  <links id="pf14411923024664" target="pf14410435608189" source="pf14410435608189" outcome="invalid">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>
